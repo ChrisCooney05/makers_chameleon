@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Button from "./Button";
+import AddColour from "./AddColour";
 
 class Chameleon extends Component {
   constructor() {
@@ -7,11 +8,25 @@ class Chameleon extends Component {
     this.state = {
       colour: "black",
       buttons: ["red", "blue", "yellow"],
+      input: "",
     };
   }
 
   updateColour = e => {
     this.setState({ colour: e.target.value });
+  };
+
+  updateInput = e => {
+    this.setState({ input: e.target.value });
+  };
+
+  addNewColour = e => {
+    e.preventDefault();
+    const newColourArray = [...this.state.buttons, this.state.input];
+    this.setState({
+      buttons: newColourArray,
+      input: "",
+    });
   };
 
   render() {
@@ -27,6 +42,11 @@ class Chameleon extends Component {
     return (
       <div>
         <h1 style={textColour}>I am a Chameleon</h1>
+        <AddColour
+          addNewColour={this.addNewColour}
+          updateInput={this.updateInput}
+        />
+        <br />
         {buttons}
       </div>
     );
