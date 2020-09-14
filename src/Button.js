@@ -1,7 +1,11 @@
 import React from "react";
 
-function Button({ colour }) {
-  return <button value={colour}>{colour}</button>;
+function Button({ colour, updateColour }) {
+  return (
+    <button value={colour} onClick={updateColour}>
+      {colour}
+    </button>
+  );
 }
 
 export default Button;

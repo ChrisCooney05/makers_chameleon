@@ -9,9 +9,16 @@ class Chameleon extends Component {
       buttons: ["red", "blue", "yellow"],
     };
   }
+
+  updateColour = e => {
+    console.log("test");
+  };
+
   render() {
     const buttons = this.state.buttons.map((button, i) => {
-      return <Button colour={button} key={i} />;
+      return (
+        <Button colour={button} key={i} updateColour={this.updateColour} />
+      );
     });
 
     const textColour = {
