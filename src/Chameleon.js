@@ -11,7 +11,7 @@ class Chameleon extends Component {
   }
 
   updateColour = e => {
-    console.log("test");
+    this.setState({ colour: e.target.value });
   };
 
   render() {
