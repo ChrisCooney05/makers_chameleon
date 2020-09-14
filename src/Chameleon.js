@@ -13,9 +13,13 @@ class Chameleon extends Component {
     const buttons = this.state.buttons.map((button, i) => {
       return <Button colour={button} key={i} />;
     });
+
+    const textColour = {
+      color: this.state.colour,
+    };
     return (
       <div>
-        <h1>I am a Chameleon</h1>
+        <h1 style={textColour}>I am a Chameleon</h1>
         {buttons}
       </div>
     );
