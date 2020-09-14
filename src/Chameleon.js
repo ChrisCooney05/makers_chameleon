@@ -45,6 +45,7 @@ class Chameleon extends Component {
         <AddColour
           addNewColour={this.addNewColour}
           updateInput={this.updateInput}
+          value={this.state.input}
         />
         <br />
         {buttons}
